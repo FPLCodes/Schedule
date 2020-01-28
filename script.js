@@ -40,3 +40,13 @@ var y = setInterval(function () {
     }
 }, 1000);
 
+function saveEdits() {
+    var editElem = document.getElementById("edit");
+    var userVersion = editElem.innerHTML;
+    localStorage.userEdits = userVersion;
+}
+
+function checkEdits() {
+    if (localStorage.userEdits != null)
+        document.getElementById("edit").innerHTML = localStorage.userEdits;
+}
